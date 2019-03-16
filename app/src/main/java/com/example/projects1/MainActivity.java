@@ -11,13 +11,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Button btn_clean,btn_plus,btn_subtract,btn_multiply,btn_divide,btn_point,btn_equal;//各个操作按钮
-    Button btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7,btn_8,btn_9,btn_0;
+    Button btn_1,btn_2,btn_3,btn_4,btn_5,btn_6,btn_7,btn_8,btn_9,btn_0;//各个数字按钮
     int[] number_id = new int[]{R.id.btn_0,R.id.btn_1,R.id.btn_2,R.id.btn_3,R.id.btn_4,R.id.btn_5,R.id.btn_6,R.id.btn_7,R.id.btn_8,R.id.btn_9};//数字按钮id
     private Button[] buttons = new Button[10];
     TextView tv,edit ;//显示框
     private String opt = "+";//操作符
     private double n1 = 0.0, n2 = 0.0;//两个操作数
-    private StringBuilder pending = new StringBuilder();//表达式
     String str;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * 按钮的监听器
+     */
     private View.OnClickListener lisenter = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             Button button = (Button)view.findViewById(id);//获取该按钮
             String current = button.getText().toString();//获取该按钮的字符串
             switch (id){
+                //数字类型按钮，在编辑框后添加数字并将编辑框内容拷贝到算术框中
                 case R.id.btn_0:
                     str = edit.getText().toString();
                     edit.setText(str+0);
@@ -139,11 +141,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                     break;
                 case R.id.btn_plus:
-                    //首先获取编辑框的数字将其置入为n1,然后清空编辑框,并且在算式框中加入新的算式
+                    //首先获取编辑框的数字将其置入为n1
                     str = edit.getText().toString();
                     n1 = Double.parseDouble(str);
+                    //清空编辑框
                     edit.setText("");
                     opt = "+";
+                    //在算式框中加入新的算式
                     tv.setText(n1 + opt);
                     break;
                 case R.id.btn_multiply:

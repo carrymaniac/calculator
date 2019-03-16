@@ -1,110 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<!--主题是一个线性布局
+    其中包含了两个TexView
+    一个按钮Button,设置为布局居中
+    一个4x4的网格布局,设置为布局居中，其中每个按钮命名好ID排列完好
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
-        android:layout_columnSpan="4"
-        android:layout_marginLeft="5dp"
-        android:layout_gravity="left"
-        android:textSize="20sp"
-        android:text="33+33"
-        android:hint=""
-        android:layout_marginBottom="10dp"
         android:id="@+id/tv"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
         android:layout_columnSpan="4"
-        android:layout_marginLeft="5dp"
         android:layout_gravity="left"
-        android:textSize="25sp"
-        android:text="77777"
-        android:hint=""
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
+        android:hint=""
+        android:text=""
+        android:textSize="20sp" />
+
+    <TextView
         android:id="@+id/edit"
-        />
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_rowSpan="1"
         android:layout_columnSpan="4"
+        android:layout_gravity="left"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:hint=""
+        android:text=""
+        android:textSize="25sp" />
+
+    <!--按钮字体设置为26sp
+    -->
+    <Button
+        android:id="@+id/btn_clean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="4dp"
         android:text="归零"
         android:textSize="26sp"
-        android:id="@+id/btn_clean"
 
         />
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rowCount="6"
-        android:columnCount="4"
         android:layout_gravity="center"
+        android:columnCount="4"
+        android:rowCount="4"
 
         >
-        <Button android:text="+"
-            android:id="@+id/btn_plus"
-            />
-
-        <Button android:text="1"
-            android:id="@+id/btn_1"
-            />
-
-        <Button android:text="2"
-            android:id="@+id/btn_2"
-            />
-
-        <Button android:text="3"
-            android:id="@+id/btn_3"/>
-
-        <Button android:text="-"
-            android:id="@+id/btn_subtract"/>
-
-        <Button android:text="4"
-            android:id="@+id/btn_4"
-            />
-
-        <Button android:text="5"
-            android:id="@+id/btn_5"/>
-
-        <Button android:text="6"
-            android:id="@+id/btn_6"
-            />
-
-        <Button android:text="*"
-            android:id="@+id/btn_multiply"
-            />
-
-        <Button android:text="7"
-            android:id="@+id/btn_7"
-            />
-
-        <Button android:text="8"
-            android:id="@+id/btn_8"/>
-
-        <Button android:text="9"
-            android:id="@+id/btn_9"/>
-
-        <Button android:text="/"
-            android:id="@+id/btn_divide"/>
 
         <Button
+            android:id="@+id/btn_plus"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn_3"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btn_subtract"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/btn_4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn_5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn_6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btn_multiply"
+            android:text="*" />
+
+        <Button
+            android:id="@+id/btn_7"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn_8"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn_9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btn_divide"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/btn_point"
             android:layout_width="wrap_content"
-            android:text="."
-            android:id="@+id/btn_point"/>
+            android:text="." />
 
-        <Button android:text="0"
-            android:id="@+id/btn_0"/>
+        <Button
+            android:id="@+id/btn_0"
+            android:text="0" />
 
-        <Button android:text="="
-            android:id="@+id/btn_equal"/>
+        <Button
+            android:id="@+id/btn_equal"
+            android:text="=" />
     </GridLayout>
 
 </LinearLayout>
